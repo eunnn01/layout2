@@ -1,0 +1,14 @@
+$(function(){
+    console.log("load")
+    $(".menu>a").mouseover(function(){
+        $(".menu>a").removeClass("active");
+        $(this).parent().children(".menu>a").addClass("active");
+        $(".drop").stop().slideDown();
+        $(".full-back").stop().slideDown();
+    })
+    $(".menu").mouseout(function(){
+        $(".drop").stop().slideUp();
+        $(".full-back").stop().slideUp();
+        $(".menu>a").removeClass("active");
+    })
+})

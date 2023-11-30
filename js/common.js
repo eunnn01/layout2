@@ -1,14 +1,23 @@
 $(function(){
     console.log("load")
-    $(".menu>a").mouseover(function(){
+    $(".menu>a").mouseenter(function(){
         $(".menu>a").removeClass("active");
         $(this).parent().children(".menu>a").addClass("active");
         $(".drop").stop().slideDown();
         $(".full-back").stop().slideDown();
     })
-    $(".menu").mouseout(function(){
+    $(".menu>a").mouseleave(function(){
+        $(".menu>a").removeClass("active");
         $(".drop").stop().slideUp();
         $(".full-back").stop().slideUp();
+    })
+    $(".drop a").mouseenter(function(){
+        $(".drop").stop().slideDown();
+        $(".full-back").stop().slideDown();
+    })
+    $("nav").mouseleave(function(){
         $(".menu>a").removeClass("active");
+        $(".drop").stop().slideUp();
+        $(".full-back").stop().slideUp();
     })
 })
